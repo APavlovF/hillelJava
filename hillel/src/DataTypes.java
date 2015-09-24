@@ -15,13 +15,17 @@ public class DataTypes {
         seconds = (int) (milliseconds / 1000);
 
         System.out.println(milliseconds);
-/*
 
         double d = 3.54;
         int i = 10;
         long l = 100000000000L;
         float f = 2.5F;
-*/
+        boolean bool = true;
+        bool = false;
+        String s = "helo world";
+        char c = 'h';
+        byte b = 115;
+
 
 
     }

@@ -3,19 +3,38 @@
  */
 public class MyFirstClass {
     public static void main(String[] args) {
+
+        sayHello();
+        int age = 30;
+        age = someMethoed(age);
+        int maxAge = calculateAge();
+        System.out.println(age);
+    }
+
+    private static int someMethoed(int age) {
+        System.out.println(age);
+        age = 50;
+        return age;
+        //int alexAge = calculateAge(1982);
+        //System.out.println(alexAge);
+    }
+
+    public static void sayHello() {
         String helloMessage = "Hello world";
         System.out.println(helloMessage);
-
-        final int maxBirthYear = 1982;
-
-        int age = 33;
-
-        //maxBirthYear = 2015;
-
-        System.out.println("I'm " + age);
-
-        System.out.println("31" + age);
-
-        System.out.println(31 + age);
     }
+
+    public static int calculateAge() {
+        final int birthYear = 1984;
+        int year = 2015;
+        int age = year - birthYear;
+        return age;
+    }
+
+    public static int calculateAge(int birthYear) {
+        int year = 2015;
+        int age = year - birthYear;
+        return age;
+    }
+
 }
