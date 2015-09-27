@@ -10,7 +10,7 @@ public class AboutMyself {
         System.out.print(myFirstName + " ");
         System.out.print(myLastName);
         System.out.println();
-        
+
         int birthYear = 1982;
         int thisYear = 2015;
         int age = thisYear - birthYear;
