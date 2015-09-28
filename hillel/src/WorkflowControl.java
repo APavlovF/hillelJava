@@ -7,8 +7,55 @@ public class WorkflowControl {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int age = scanner.nextInt();
 
+        //switchCaseString();
+        //switchCaseExample();
+
+        //int age = scanner.nextInt();
+        //ifExample(age);
+    }
+
+    private static void switchCaseString() {
+        String month = "mars";
+        switch (month) {
+            case "jan":
+            case "feb":
+            case "dec":
+                System.out.println("Winter");
+                break;
+            case "mar":
+            case "apr":
+            case "may":
+                System.out.println("Spring");
+                break;
+            default:
+                System.out.println("Wrong month name: " + month);
+                break;
+        }
+    }
+
+    private static void switchCaseExample() {
+        int month = 15;
+        switch (month) {
+            case 1:
+                System.out.println("Jan");
+                break;
+            case 5:
+                System.out.println("May");
+                break;
+            case 8:
+                System.out.println("Aug");
+                break;
+            case 12:
+                System.out.println("Dec");
+                break;
+            default:
+                System.out.println("Wrong month number");
+                break;
+        }
+    }
+
+    private static void ifExample(int age) {
         if (age < 20) {
             System.out.println("you are young");
         } else {

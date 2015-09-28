@@ -6,18 +6,28 @@ import java.util.Scanner;
 public class HomeWork2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        FirstTask(scanner);
-
-        SecondTask(scanner);
-
-        ThirdTask(scanner);
-
-
+        //firstTask(scanner);
+        //secondTask(scanner);
+        //thirdTask(scanner);
+        ternaryExample(scanner);
     }
 
+    private static void ternaryExample(Scanner scanner) {
+        int number = scanner.nextInt();
+        String isEven = isEven(number);
 
-    private static void FirstTask(Scanner scanner) {
+        isEven = (number % 2 == 0) ? "yes" : "no";
+    }
+
+    public static String isEven(int someNumber) {
+        if (someNumber % 2 == 0) {
+            return "yes";
+        } else {
+            return "no";
+        }
+    }
+
+    private static void firstTask(Scanner scanner) {
         System.out.println("1. Enter a number: ");
         int number1 = scanner.nextInt();
         if (number1 % 2 > 0) {
@@ -28,7 +38,7 @@ public class HomeWork2 {
         }
     }
 
-    private static void SecondTask(Scanner scanner) {
+    private static void secondTask(Scanner scanner) {
         System.out.println("2. Enter two numbers: ");
         int number21 = scanner.nextInt();
         int number22 = scanner.nextInt();
@@ -42,7 +52,7 @@ public class HomeWork2 {
         }
     }
 
-    private static void ThirdTask(Scanner scanner) {
+    private static void thirdTask(Scanner scanner) {
         String negativeAnswer = "Such figure doesn't exist";
         System.out.println("Enter perimeter: ");
         int number31 = scanner.nextInt();
