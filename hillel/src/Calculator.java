@@ -20,7 +20,7 @@ public class Calculator {
                 System.out.println("Result is: " + Math.floor(firstNumber) + resultType(Math.floor(firstNumber)));  //use method resultType
                 break;
             case "fract":
-                System.out.println("Result is: " + (firstNumber - Math.floor(firstNumber)) + " (double)");
+                System.out.println("Result is: " + (firstNumber - Math.floor(firstNumber)) + " (double)"); //fract always double
                 break;
 
             case "+":
@@ -57,13 +57,13 @@ public class Calculator {
         String resType = " (number is too large)";
         if ((result - Math.floor(result)) != 0) {  //снова проверка, что число целое.
             resType = " (double)";
-        } else if (Math.abs(result) < 127) {
+        } else if (result > -128 & result < 127) {
             resType = " (byte)";
-        } else if (Math.abs(result) < 32767) {
+        } else if (result > -32768 & result < 32767) {
             resType = " (short)";
-        } else if (Math.abs(result) < 2147483647) {
+        } else if (result > -2147483648 & result < 2147483647) {
             resType = " (int)";
-        } else if (Math.abs(result) < 9223372036854775807L) {
+        } else if (result > -9223372036854775808L & result < 9223372036854775807L) {
             resType = " (long)";
         }
 
