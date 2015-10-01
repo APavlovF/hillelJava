@@ -54,7 +54,7 @@ public class Calculator {
     }
 
     public static String resultType(double result) {
-        String resType = " (number is too large)";
+        String resType = " (double)";
         if ((result - Math.floor(result)) != 0) {  //снова проверка, что число целое.
             resType = " (double)";
         } else if (result > -128 & result < 127) {

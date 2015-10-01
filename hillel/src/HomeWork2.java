@@ -9,7 +9,17 @@ public class HomeWork2 {
         //firstTask(scanner);
         //secondTask(scanner);
         //thirdTask(scanner);
-        ternaryExample(scanner);
+        //ternaryExample(scanner);
+        double d = 2.0;
+        isEven((int) d);
+        isEven(d, true);
+
+
+        boolean todayIsThursday = true;
+        boolean iShouldStayHere = true;
+        todayIsThursday = !todayIsThursday;
+        todayIsThursday = !(todayIsThursday && iShouldStayHere);
+        boolean isEven = !isOdd(10);
     }
 
     private static void ternaryExample(Scanner scanner) {
@@ -20,10 +30,30 @@ public class HomeWork2 {
     }
 
     public static String isEven(int someNumber) {
+        System.out.println("int");
         if (someNumber % 2 == 0) {
             return "yes";
         } else {
             return "no";
+        }
+    }
+
+    public static boolean isEven(double someNumber, boolean anotherNumber) {
+        System.out.println("double and boolean");
+        if (someNumber % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+
+    public static boolean isOdd(int someNumber) {
+        if (someNumber % 2 != 0) {
+            return true;
+        } else {
+            return false;
         }
     }
 
