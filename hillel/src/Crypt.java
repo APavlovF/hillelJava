@@ -1,22 +1,29 @@
+import java.util.Scanner;
+
 public class Crypt {
     public static void main(String[] args) {
-        char key = '1'; //crypt
-        char[] chars = "someText".toCharArray();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a message: ");
+        String someString = scanner.nextLine();
+
+        System.out.println("Enter a key: ");
+        char key = scanner.next().charAt(0);
+
         System.out.println("Crypted message: ");
 
-        crypt(key, chars);
-        String cryptedString = String.copyValueOf(chars);
-        System.out.println(cryptedString);
+        someString = crypt(someString, key);
 
         System.out.println("Uncrypted message: ");
-        crypt(key, chars);
-        String someString = String.copyValueOf(chars);
-        System.out.println(someString);
+        crypt(someString, key);
     }
 
-    private static void crypt(char key, char[] chars) {
+    private static String crypt(String someString, char key) {
+        char chars[] = someString.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             chars[i] ^= key;
         }
+        String cryptString = String.copyValueOf(chars);
+        System.out.println(cryptString);
+        return cryptString;
     }
 }
