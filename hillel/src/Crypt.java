@@ -12,9 +12,11 @@ public class Crypt {
         System.out.println("Crypted message: ");
 
         someString = crypt(someString, key);
+        System.out.println(someString);
 
         System.out.println("Uncrypted message: ");
-        crypt(someString, key);
+        someString = crypt(someString, key);
+        System.out.println(someString);
     }
 
     private static String crypt(String someString, char key) {
@@ -23,7 +25,6 @@ public class Crypt {
             chars[i] ^= key;
         }
         String cryptString = String.copyValueOf(chars);
-        System.out.println(cryptString);
         return cryptString;
     }
 }
