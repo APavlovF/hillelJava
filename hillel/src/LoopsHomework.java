@@ -10,26 +10,6 @@ public class LoopsHomework {
         //messageCost();
         //guessNumber();
 
-        cryptedMessage();  //над этим еще подумаю. остальные готовы.
-
-    }
-
-    private static void cryptedMessage() {
-        char key = '7';
-        char[] chars = "someText".toCharArray();
-        System.out.println("Crypted message: ");
-
-        for (int i = 0; i < chars.length; i++) {
-            chars[i] ^= key;
-            System.out.print(chars[i]);
-        }
-        System.out.println();
-        System.out.println("Uncrypted message: ");
-        for (int i = 0; i < chars.length; i++) {
-            chars[i] ^= key;
-        }
-        String someString = String.copyValueOf(chars);
-        System.out.println(someString);
     }
 
     private static void guessNumber() {
@@ -37,7 +17,7 @@ public class LoopsHomework {
         int yourGuess = 0;
         int triesCount = 0;
         Scanner scanner = new Scanner(System.in);
-        //System.out.println(guessedNumber);
+        System.out.println(guessedNumber);
         System.out.println("Try to guess number from 0 to 99");
         do {
             yourGuess = scanner.nextInt();
@@ -86,7 +66,7 @@ public class LoopsHomework {
     private static void deposit() {
         double startSum;
         double finalSum;
-        double percent = 0.03;
+        double percent = 0.03 / 12;
         double limitSum;
         double months;
 
