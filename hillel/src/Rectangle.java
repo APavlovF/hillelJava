@@ -8,6 +8,7 @@ public class Rectangle {
     static int area;
 
     public static void main(String[] args) {
+        /*
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter perimeter: ");
         perimeter = scanner.nextInt();
@@ -17,6 +18,11 @@ public class Rectangle {
         RectangleTask rect1 = new RectangleTask(perimeter, area);
         //rect1.hasSolution();
         rect1.getRectangle();
+        */
+        RectangleTask rect2 = new RectangleTask(14, 10);
+        rect2.getRectangle();
+        RectangleTask rect3 = new RectangleTask(12, 30);
+        rect3.getRectangle();
     }
 
 
@@ -37,12 +43,12 @@ class RectangleTask {
         y2 = s / x2;
     }
 
-    public Rectangle getRectangle() {
+    public Rectangle getRectangle() {  // in this class I use type of another class - ?? don't understand why no error?
 
         if (hasSolution()) {
             System.out.println("Sides of rectangle are: " + x1 + " and " + y1);
         }
-        return null;
+        return null; // ?? this way it's not visible in console
     }
 
     public boolean hasSolution() {
