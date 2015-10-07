@@ -12,14 +12,8 @@ public class SuperCrypt {
         System.out.println("Enter a key: ");
         String key = scanner.next();
 
-    }
-}
-class Cryptor {
-    Cryptor(String keyString){
-        char[] keyChar = new char[5];
-    }
-    public String cryptedMessage(String message){
-        String crypt = "a";
-        return crypt;
+        Cryptor cryptor = new Cryptor(key);
+        System.out.println("Crypted message: " + cryptor.cryptedMessage(someString));
+        System.out.println("Uncrypted message: " + cryptor.cryptedMessage(cryptor.cryptedMessage(someString)));
     }
 }
