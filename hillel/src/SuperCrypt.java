@@ -13,7 +13,7 @@ public class SuperCrypt {
         String key = scanner.next();
 
         Cryptor cryptor = new Cryptor(key);
-        System.out.println("Crypted message: " + cryptor.cryptedMessage(someString));
-        System.out.println("Uncrypted message: " + cryptor.cryptedMessage(cryptor.cryptedMessage(someString)));
+        System.out.println("Crypted message: " + cryptor.crypt(someString));
+        System.out.println("Uncrypted message: " + cryptor.crypt(cryptor.crypt(someString)));
     }
 }
