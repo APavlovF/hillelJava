@@ -12,11 +12,9 @@ public class Zoo {
         //System.out.println(tomCat1.equals(tomCat2));
         Cat tomCat1 = new Cat(true, 3, "Tom", "Blue-gray");
         String sound = tomCat1.makeSound();
-        System.out.println(sound);
+        //System.out.println(sound);
 
-        Animal animal = new Animal();
-
-        Cat cat = new Cat();
+        //Cat cat = new Cat();
 
         Animal animalCat = new Cat();   //polymorphism
 
@@ -30,6 +28,14 @@ public class Zoo {
         Object cat2 = new Cat(true, 3, "Tom", "Blue-gray");
         System.out.println("polymorphic equals: " + cat1.equals(cat2));
 
+        //polymorphismExample();
+
+        //Animal someAnimal = new Animal();   error - because Animal is abstract class
+
+
+    }
+
+    private static void polymorphismExample() {
         Object[] objects = new Object[3];
         objects[0] = "some string";
         objects[1] = new Cat(true, 3, "Tom", "Blue-gray");
@@ -38,7 +44,6 @@ public class Zoo {
         for (Object o : objects) {
             System.out.println(o.toString());
         }
-
     }
 
     private static void referenceComparison() {
