@@ -13,7 +13,6 @@ public class Zoo {
         Cat tomCat1 = new Cat(true, 3, "Tom", "Blue-gray");
         String sound = tomCat1.makeSound();
         //System.out.println(sound);
-
         //Cat cat = new Cat();
 
         Animal animalCat = new Cat();   //polymorphism
@@ -26,12 +25,23 @@ public class Zoo {
 
         Object cat1 = new Cat(true, 3, "Tom", "Blue-gray");
         Object cat2 = new Cat(true, 3, "Tom", "Blue-gray");
+
         System.out.println("polymorphic equals: " + cat1.equals(cat2));
 
         //polymorphismExample();
 
         //Animal someAnimal = new Animal();   error - because Animal is abstract class
+        Animal anotherAnimal = new Cat();
+        System.out.println(anotherAnimal.someField);
+        System.out.println(anotherAnimal.getSomeField());
 
+        Cat anotherCat = new Cat();
+        System.out.println(anotherCat.someField);
+
+        System.out.println(anotherAnimal.getTypeName());
+        System.out.println(Animal.getTypeName());
+        System.out.println(Cat.getTypeName());
+        System.out.println(anotherCat.getTypeName());
 
     }
 
@@ -69,11 +79,9 @@ public class Zoo {
 
         Cat murzik = new Cat();
         murzik.pet = true;
-        murzik.age = 4;
+        murzik.setAge(4);
         murzik.color = "black";
-        murzik.name = "Murzik";
 
-        System.out.println(tomCat.name);
         System.out.println(murzik.predator);
     }
 }

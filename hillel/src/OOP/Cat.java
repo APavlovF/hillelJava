@@ -9,17 +9,19 @@ public class Cat extends Animal {
 
     boolean pet;
     //int age;
-    //String name;
+    public String someField = "cat's field";
     String color;
 
     public Cat() {
+        super("unknown", 0);
         System.out.println("in Cat constructor");
     }
 
     public Cat(boolean pet, int itsAge, String name, String color) {
+        super(name, itsAge);
         this.pet = pet;
-        this.age = itsAge;
-        this.name = name;
+        //this.age = itsAge;
+        //this.name = name;
         this.color = color;
     }
 
@@ -41,12 +43,15 @@ public class Cat extends Animal {
     @Override
     public boolean equals(Object otherObject) {
         System.out.println("in cat's equals method");
+
+        if (!super.equals(otherObject)) return false;
+
         if (!(otherObject instanceof Cat)) return false;
         Cat otherCat = (Cat) otherObject;
 
         if (pet != otherCat.pet) return false;
-        if (age != otherCat.age) return false;
-        if (!name.equals(otherCat.name)) return false;
+        //if (getAge() != otherCat.getAge()) return false;
+        //if (!getName().equals(otherCat.getName())) return false;
         if (!color.equals(otherCat.color)) return false;
         return true;
     }
@@ -56,4 +61,13 @@ public class Cat extends Animal {
     // this.name = name;
     //this.color = color;
     //}
+
+
+    public String getSomeField() {
+        return someField;
+    }
+
+    public static String getTypeName() {
+        return "Cat";
+    }
 }

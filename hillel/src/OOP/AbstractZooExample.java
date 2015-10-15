@@ -29,7 +29,7 @@ public class AbstractZooExample {
         employee4.vaccinate("SDF");
         System.out.println(employee4);
 
-        
+
     }
 
     public static void vaccinate(Vaccinable animalOrEmployee) {

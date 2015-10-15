@@ -5,6 +5,10 @@ package OOP;
  */
 public class Dog extends Animal {
 
+    public Dog() {
+        super("dog", 0);
+    }
+
     @Override
     public String makeSound() {
         return "Woof";
