@@ -5,4 +5,5 @@ package Paint;
  */
 public interface Paintable {
     double paintConsumed(double area, double consumption);
+    String getColor(String color);
 }

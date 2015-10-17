@@ -14,4 +14,8 @@ public abstract class Figure implements Paintable{
         double paintConsumed = area*consumption;
         return paintConsumed;
     }
+    public String getColor(String color){
+        return color;
+
+    }
 }
