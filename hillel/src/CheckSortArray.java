@@ -6,9 +6,12 @@ import java.util.Arrays;
 public class CheckSortArray {
     public static void main(String[] args) {
         SortArray sortExample = new SortArray(10);
-
         System.out.println(sortExample);
 
-        System.out.println(sortExample.sortedArray());
+        int[] myArray = {1, 2, 5 , 4, 1, 0, 25};
+
+        String checkSortedArray = Arrays.toString(sortExample.sortedArray(myArray));
+        System.out.println(checkSortedArray);
+
     }
 }

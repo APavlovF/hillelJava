@@ -7,7 +7,10 @@ public class SortArray {
     private int[] sortArray;
     private int size;
 
-    SortArray(int size) {
+    public SortArray(){
+
+    }
+    public SortArray(int size) {
         this.size = size;
         sortArray = new int[size];
         for (int i = 0; i < size; i++) {
@@ -15,7 +18,8 @@ public class SortArray {
         }
     }
 
-    private void sort1() {
+    private void selectionSort(int[] someArray) {
+        sortArray = someArray;
         for (int i = 0; i < sortArray.length; i++) {
             int minimum = sortArray[i];
             int minimumIndex = i;
@@ -32,9 +36,9 @@ public class SortArray {
             }
         }
     }
-    public String sortedArray(){
-        sort1();
-        return Arrays.toString(sortArray);
+    public int[] sortedArray(int[] sortArray){
+        selectionSort(sortArray);
+        return sortArray;
     }
 
     @Override
