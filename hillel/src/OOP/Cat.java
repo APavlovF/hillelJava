@@ -3,7 +3,7 @@ package OOP;
 /**
  * Created by APavlov on 05.10.2015.
  */
-public class Cat extends Animal {
+public class Cat extends Animal implements Comparable<Cat> {
     public static final boolean domestic = true;
     public static final boolean predator = true;
 
@@ -69,5 +69,11 @@ public class Cat extends Animal {
 
     public static String getTypeName() {
         return "Cat";
+    }
+
+
+    @Override
+    public int compareTo(Cat o) {
+        return this.getName().compareTo(o.getName());
     }
 }
