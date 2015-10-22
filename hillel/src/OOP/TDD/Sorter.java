@@ -18,9 +18,9 @@ public class Sorter {
                 int g = first.compareTo(second);
 
                 if (g > 0) {
-                    int temp = copy[i];
+                    // int temp = copy[i];
                     copy[i] = copy[j];
-                    copy[j] = temp;
+                    // copy[j] = temp;
                 }
             }
         }

@@ -12,11 +12,22 @@ public class Cat extends Animal implements Comparable<Cat> {
     public String someField = "cat's field";
     String color;
 
+    /**
+     * creates a new instance of Cat
+     */
     public Cat() {
         super("unknown", 0);
         System.out.println("in Cat constructor");
     }
 
+    /**
+     * Constructor description
+     *
+     * @param pet    comment
+     * @param itsAge about
+     * @param name
+     * @param color
+     */
     public Cat(boolean pet, int itsAge, String name, String color) {
         super(name, itsAge);
         this.pet = pet;
@@ -74,6 +85,9 @@ public class Cat extends Animal implements Comparable<Cat> {
 
     @Override
     public int compareTo(Cat o) {
+        if (this.equals(o)) {
+            return 0;
+        }
         return this.getName().compareTo(o.getName());
     }
 }
