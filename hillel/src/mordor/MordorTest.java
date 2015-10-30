@@ -1,6 +1,5 @@
 package mordor;
 
-import OOP.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,9 +10,9 @@ public class MordorTest {
 
     @Test
     public void fightTest(){
-        HumanFight human = new HumanFight();
-        OrkFight ork = new OrkFight();
-        ElfFight elf = new ElfFight();
+        Human human = new Human();
+        Ork ork = new Ork();
+        Elf elf = new Elf();
         Assert.assertEquals("Fight with sword!", human.fight());
         Assert.assertEquals("Fight with hammer!", ork.fight());
         Assert.assertEquals("Fight with bow!", elf.fight());
