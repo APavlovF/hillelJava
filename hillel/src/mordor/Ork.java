@@ -11,4 +11,9 @@ public class Ork extends Warrior{
     public String fight(){
         return fightWeapon.fight();
     }
+
+    @Override
+    String person() {
+        return "I'm ork";
+    }
 }

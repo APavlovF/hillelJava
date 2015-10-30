@@ -11,4 +11,8 @@ public class Human extends Warrior{
     public String fight(){
         return fightWeapon.fight();
     }
+    @Override
+    public String person(){
+        return "I'm human";
+    }
 }

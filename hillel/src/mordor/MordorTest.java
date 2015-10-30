@@ -13,8 +13,11 @@ public class MordorTest {
         Human human = new Human();
         Ork ork = new Ork();
         Elf elf = new Elf();
+        Assert.assertEquals("I'm human", human.person());
         Assert.assertEquals("Fight with sword!", human.fight());
+        Assert.assertEquals("I'm ork", ork.person());
         Assert.assertEquals("Fight with hammer!", ork.fight());
+        Assert.assertEquals("I'm elf", elf.person());
         Assert.assertEquals("Fight with bow!", elf.fight());
     }
 }
