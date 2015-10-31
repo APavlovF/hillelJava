@@ -6,10 +6,10 @@ package mordor;
 public class Ork extends Warrior{
 
     public Ork(){
-        fightWeapon = new OrkFight();
+        weapon = new Hammer();
     }
     public String fight(){
-        return fightWeapon.fight();
+        return weapon.fight();
     }
 
     @Override

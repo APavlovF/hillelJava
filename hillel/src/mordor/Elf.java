@@ -6,10 +6,10 @@ package mordor;
 public class Elf extends Warrior {
 
     public Elf(){
-        fightWeapon = new ElfFight();
+        weapon = new Bow();
     }
     public String fight(){
-        return fightWeapon.fight();
+        return weapon.fight();
     }
     @Override
     public String person(){

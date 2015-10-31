@@ -6,10 +6,10 @@ package mordor;
 public class Human extends Warrior{
 
     public Human(){
-        fightWeapon = new HumanFight();
+        weapon = new Sword();
     }
     public String fight(){
-        return fightWeapon.fight();
+        return weapon.fight();
     }
     @Override
     public String person(){

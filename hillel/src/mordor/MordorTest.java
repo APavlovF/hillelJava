@@ -19,6 +19,6 @@ public class MordorTest {
         Assert.assertEquals("I'm ork" + " " + "Fight with hammer!", ork.person() + " " + ork.fight());
 
         Assert.assertEquals("I'm elf" + " " + "Fight with bow!", elf.person()+ " " + elf.fight());
-        
+
     }
 }
