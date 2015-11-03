@@ -6,5 +6,7 @@ package mordor;
 public abstract class Warrior {
     Weapon weapon;
 
+    int damageByRace;
+
     abstract String person();
 }

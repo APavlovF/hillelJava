@@ -8,4 +8,14 @@ public class Sword implements Weapon {
     public String fight(){
         return "Fight with sword!";
     }
+
+    @Override
+    public String damageType() {
+        return "Cut";
+    }
+
+    @Override
+    public int damageByWeapon(int damageByRace) {
+        return 6 + damageByRace;
+    }
 }

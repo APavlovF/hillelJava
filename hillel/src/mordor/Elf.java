@@ -15,4 +15,13 @@ public class Elf extends Warrior {
     public String person(){
         return "I'm elf";
     }
+
+    public String damageType() {
+        return weapon.damageType();
+    }
+
+    public int damage(){
+        damageByRace = 4;
+        return weapon.damageByWeapon(damageByRace);
+    }
 }

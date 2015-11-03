@@ -8,4 +8,14 @@ public class Hammer implements Weapon {
     public String fight() {
         return "Fight with hammer!";
     }
+
+    @Override
+    public String damageType() {
+        return "Crush";
+    }
+
+    @Override
+    public int damageByWeapon(int damageByRace) {
+        return 7 + damageByRace;
+    }
 }

@@ -9,16 +9,28 @@ import org.junit.Test;
 public class MordorTest {
 
     @Test
-    public void fightTest(){
+    public void fightTest() {
         Human human = new Human();
         Ork ork = new Ork();
         Elf elf = new Elf();
 
-        Assert.assertEquals("I'm human" + " " + "Fight with sword!", human.person()+ " " + human.fight());
-
+        Assert.assertEquals("I'm human" + " " + "Fight with sword!", human.person() + " " + human.fight());
         Assert.assertEquals("I'm ork" + " " + "Fight with hammer!", ork.person() + " " + ork.fight());
+        Assert.assertEquals("I'm elf" + " " + "Fight with bow!", elf.person() + " " + elf.fight());
+    }
 
-        Assert.assertEquals("I'm elf" + " " + "Fight with bow!", elf.person()+ " " + elf.fight());
+    @Test
+    public void damageTest() {
+        Human human = new Human();
+        Ork ork = new Ork();
+        Elf elf = new Elf();
+
+        Assert.assertEquals("Cut" + 9, human.damageType() + human.damage());
+        Assert.assertEquals("Crush" + 9, ork.damageType() + ork.damage());
+        Assert.assertEquals("Pierce" + 9, elf.damageType() + elf.damage());
+
+        human.weapon = new Hammer();  //human fights with hammer
+
 
     }
 }
