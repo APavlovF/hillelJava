@@ -5,17 +5,19 @@ package mordor;
  */
 public class Elf extends Warrior {
 
-    Damage damageByElf = new Damage(4 / 2);
+    Damage damageByElf = new Damage(0, 0, 4 / 2);
     int damage = damageByElf.damage;
 
-    public Elf(){
+    public Elf() {
         weapon = new Bow();
     }
-    public String fight(){
+
+    public String fight() {
         return weapon.fight();
     }
+
     @Override
-    public String person(){
+    public String person() {
         return "I'm elf";
     }
 

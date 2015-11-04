@@ -7,7 +7,7 @@ public class Damage {
 
     int damage;
 
-    public Damage(int damage) {
-        this.damage = damage;
+    public Damage(int cut, int crush, int pierce) {
+        this.damage = cut + crush + pierce;
     }
 }

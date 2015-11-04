@@ -31,9 +31,11 @@ public class MordorTest {
 
         int damage1 = human.damage + sword.damage;
         int damage2 = human.damage + hammer.damage;
+        int damage3 = elf.damage + bow.damage;
 
         Assert.assertEquals(7, damage1);
         Assert.assertEquals(8, damage2);
+        Assert.assertEquals(7, damage3);
 
     }
 }

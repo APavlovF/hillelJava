@@ -5,7 +5,7 @@ package mordor;
  */
 public class Hammer implements Weapon {
 
-    Damage damageByHammer = new Damage(7);
+    Damage damageByHammer = new Damage(0, 7, 0);
     int damage = damageByHammer.damage;
 
     @Override

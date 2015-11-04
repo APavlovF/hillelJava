@@ -5,7 +5,7 @@ package mordor;
  */
 public class Sword implements Weapon {
 
-    Damage damageBySword = new Damage(6);
+    Damage damageBySword = new Damage(6, 0, 0);
     int damage = damageBySword.damage;
 
 

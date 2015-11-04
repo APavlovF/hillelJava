@@ -5,7 +5,7 @@ package mordor;
  */
 public class Bow implements Weapon {
 
-    Damage damageByBow = new Damage(5);
+    Damage damageByBow = new Damage(0, 0, 5);
     int damage = damageByBow.damage;
 
     @Override
