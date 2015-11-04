@@ -5,8 +5,8 @@ package mordor;
  */
 public class Human extends Warrior {
 
-    public Human() {
-        weapon = new Sword();
+    public Human(){
+        damageRace.setDamageByRace(3);
     }
 
     public String fight() {
@@ -18,12 +18,4 @@ public class Human extends Warrior {
         return "I'm human";
     }
 
-    public String damageType() {
-        return weapon.damageType();
-    }
-
-    public int damage(){
-        damageByRace = 3;
-        return weapon.damageByWeapon(damageByRace);
-    }
 }

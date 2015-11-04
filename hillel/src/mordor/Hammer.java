@@ -9,13 +9,5 @@ public class Hammer implements Weapon {
         return "Fight with hammer!";
     }
 
-    @Override
-    public String damageType() {
-        return "Crush";
-    }
 
-    @Override
-    public int damageByWeapon(int damageByRace) {
-        return 7 + damageByRace;
-    }
 }

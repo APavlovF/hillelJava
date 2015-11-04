@@ -10,13 +10,4 @@ public class Bow implements Weapon {
         return "Fight with bow!";
     }
 
-    @Override
-    public String damageType() {
-        return "Pierce";
-    }
-
-    @Override
-    public int damageByWeapon(int damageByRace) {
-        return 5 + damageByRace;
-    }
 }

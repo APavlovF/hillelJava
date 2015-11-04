@@ -25,12 +25,9 @@ public class MordorTest {
         Ork ork = new Ork();
         Elf elf = new Elf();
 
-        Assert.assertEquals("Cut" + 9, human.damageType() + human.damage());
-        Assert.assertEquals("Crush" + 9, ork.damageType() + ork.damage());
-        Assert.assertEquals("Pierce" + 9, elf.damageType() + elf.damage());
-
-        human.weapon = new Hammer();  //human fights with hammer
-
+        int d;
+        Damage damage = new Damage();
+        Assert.assertEquals(7, d = damage.calculateTotalDamage(new Sword(), new Human()));
 
     }
 }

@@ -17,12 +17,5 @@ public class Ork extends Warrior{
         return "I'm ork";
     }
 
-    public String damageType() {
-        return weapon.damageType();
-    }
 
-    public int damage(){
-        damageByRace = 2;
-        return weapon.damageByWeapon(damageByRace);
-    }
 }

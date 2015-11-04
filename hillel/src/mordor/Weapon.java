@@ -6,8 +6,5 @@ package mordor;
 public interface Weapon {
 
     String fight();
-
-    String damageType();
-
-    int damageByWeapon(int damageByRace);
+    Damage damageWeapon = new Damage();
 }
