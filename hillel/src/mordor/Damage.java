@@ -5,32 +5,9 @@ package mordor;
  */
 public class Damage {
 
-    String damageType;
-    int totalDamage;
-    int damageByRace;
-    int damageByWeapon;
+    int damage;
 
-    public Damage(){
-
-    }
-
-    public int calculateTotalDamage(Weapon weapon, Warrior warrior) {
-        return totalDamage = getDamageByWeapon() + getDamageByRace() / 2;
-    }
-
-    public void setDamageByRace(int damageByRace) {
-        this.damageByRace = damageByRace;
-    }
-
-    public void setDamageByWeapon(int damageByWeapon) {
-        this.damageByWeapon = damageByWeapon;
-    }
-
-    public int getDamageByRace() {
-        return damageByRace;
-    }
-
-    public int getDamageByWeapon() {
-        return damageByWeapon;
+    public Damage(int damage) {
+        this.damage = damage;
     }
 }

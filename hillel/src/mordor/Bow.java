@@ -5,6 +5,9 @@ package mordor;
  */
 public class Bow implements Weapon {
 
+    Damage damageByBow = new Damage(5);
+    int damage = damageByBow.damage;
+
     @Override
     public String fight() {
         return "Fight with bow!";

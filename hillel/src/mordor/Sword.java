@@ -5,9 +5,9 @@ package mordor;
  */
 public class Sword implements Weapon {
 
-    public Sword(){
-        damageWeapon.setDamageByWeapon(6);
-    }
+    Damage damageBySword = new Damage(6);
+    int damage = damageBySword.damage;
+
 
     @Override
     public String fight() {

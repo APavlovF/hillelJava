@@ -6,5 +6,5 @@ package mordor;
 public interface Weapon {
 
     String fight();
-    Damage damageWeapon = new Damage();
+
 }

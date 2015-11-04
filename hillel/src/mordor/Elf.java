@@ -5,6 +5,9 @@ package mordor;
  */
 public class Elf extends Warrior {
 
+    Damage damageByElf = new Damage(4 / 2);
+    int damage = damageByElf.damage;
+
     public Elf(){
         weapon = new Bow();
     }

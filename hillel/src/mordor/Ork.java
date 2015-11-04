@@ -5,6 +5,9 @@ package mordor;
  */
 public class Ork extends Warrior{
 
+    Damage damageByOrk = new Damage(2 / 2);
+    int damage = damageByOrk.damage;
+
     public Ork(){
         weapon = new Hammer();
     }

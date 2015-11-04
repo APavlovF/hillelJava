@@ -5,9 +5,8 @@ package mordor;
  */
 public class Human extends Warrior {
 
-    public Human(){
-        damageRace.setDamageByRace(3);
-    }
+    Damage damageByHuman = new Damage(3 / 2);
+    int damage = damageByHuman.damage;
 
     public String fight() {
         return weapon.fight();
