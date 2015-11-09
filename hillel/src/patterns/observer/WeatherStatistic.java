@@ -6,16 +6,16 @@ import java.util.List;
 /**
  * Created by APavlov on 05.11.2015.
  */
-public class WeatherStatistic {
+public class WeatherStatistic implements WeatherObserver {
 
     List<Integer> temperatures = new ArrayList<>();
     List<Integer> humidities = new ArrayList<>();
     List<Integer> pressures = new ArrayList<>();
 
-    public void set(int temperature, int humidity, int pressure) {
-        temperatures.add(temperature);
-        humidities.add(humidity);
-        pressures.add(pressure);
+    public void updateWeather(WeatherStation station) {
+        temperatures.add(station.getTemperature());
+        humidities.add(station.getHumidity());
+        pressures.add(station.getPressure());
     }
 
     public void display() {

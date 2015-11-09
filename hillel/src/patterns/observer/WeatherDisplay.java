@@ -3,16 +3,17 @@ package patterns.observer;
 /**
  * Created by APavlov on 05.11.2015.
  */
-public class WeatherDisplay {
+public class WeatherDisplay implements WeatherObserver {
+
 
     int temperature;
     int humidity;
     int pressure;
 
-    public void set(int temperature, int humidity, int pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = pressure;
+    public void updateWeather(WeatherStation station) {
+        this.temperature = station.getTemperature();
+        this.humidity = station.getHumidity();
+        this.pressure = station.getPressure();
     }
 
     public void display() {
