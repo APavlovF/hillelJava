@@ -33,6 +33,7 @@ public class MultithreadingMain {
         try {
             Thread.sleep(1500);
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             e.printStackTrace();
         }
 
