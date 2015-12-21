@@ -1,5 +1,11 @@
 package database;
 
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -8,13 +14,35 @@ import java.util.Optional;
 /**
  * Created by APavlov on 14.12.2015.
  */
-public class ProductMemoryDAO implements ProductDAO {
+public class ProductXmlDao implements ProductDAO {
+    public static final String PRODUCTS_XML_PATH = "d:/products.xml";
+
     private List<Product> products;
 
-    public ProductMemoryDAO() {
-        products = new ArrayList<>();
-        products.add(new Product(1, "Mouse", "Computers", 10));
-        products.add(new Product(2, "Keyboard", "Computers", 15));
+    public ProductXmlDao() {
+        try {
+            XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(PRODUCTS_XML_PATH)));
+            products = (List<Product>) decoder.readObject();
+            decoder.close();
+        } catch (FileNotFoundException e) {
+            products = new ArrayList<>();
+            products.add(new Product(1, "Mouse", "Computers", 10));
+            products.add(new Product(2, "Keyboard", "Computers", 15));
+        }
+
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    XMLEncoder encoder = new XMLEncoder(new FileOutputStream(PRODUCTS_XML_PATH));
+                    encoder.writeObject(products);
+                    encoder.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+
     }
 
 
