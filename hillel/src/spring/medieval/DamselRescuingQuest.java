@@ -1,4 +1,4 @@
-package spring;
+package spring.medieval;
 
 /**
  * Created by APavlov on 28.12.2015.
