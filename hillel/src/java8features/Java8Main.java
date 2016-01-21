@@ -1,9 +1,10 @@
 package java8features;
 
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
+import java.util.function.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -13,6 +14,52 @@ import java.util.stream.Collectors;
 public class Java8Main {
     public static void main(String[] args) {
         //defaultMethodExample();
+        StreamExample();
+        //functionExample();
+
+
+    }
+
+    private static void functionExample() {
+        //System.out.println(createApples(10, Apple::new));
+        System.out.println(createApples(10, (Supplier<Apple>) Apple::new));
+        /*
+        System.out.println(createApples(10, new Supplier<Apple>() {
+            @Override
+            public Apple get() {
+                return new Apple();
+            }
+        }));
+        */
+        List<Apple> apples = createApples(10, (Supplier<Apple>) Apple::new);
+
+        consumeApples(apples, new Consumer<Apple>() {
+            @Override
+            public void accept(Apple apple) {
+                System.out.println(apple);
+            }
+        });
+        consumeApples(apples, System.out::print);
+
+        System.out.println();
+        System.out.println(mapToString(apples, Apple::getColor));
+    }
+
+    public static List<String> mapToString(List<Apple> apples, Function<Apple, String> mapper) {
+        List<String> strings = new ArrayList<>();
+        for (Apple apple : apples) {
+            strings.add(mapper.apply(apple));
+        }
+        return strings;
+    }
+
+    public static void consumeApples(List<Apple> apples, java.util.function.Consumer<Apple> consumer) {
+        for (Apple apple : apples) {
+            consumer.accept(apple);
+        }
+    }
+
+    private static void StreamExample() {
         List<Apple> apples = new ArrayList<>();
         apples.add(new Apple("Red", 150));
         apples.add(new Apple("Green", 180));
@@ -35,13 +82,53 @@ public class Java8Main {
 
         heavyApples = filter(apples, apple -> apple.getWeight() > 170);
 
+        Predicate<Apple> isHeavy = Java8Main::isHeavy;
+        Predicate<Apple> isGreen = apple -> apple.getColor().equals("Green");
+        heavyApples = apples
+                .stream()
+                .filter(isHeavy)
+                .filter(isGreen)
+                .collect(Collectors.toList());
+
+        Predicate<Apple> isHeavyAndGreen = isGreen.and(isHeavy);
+        heavyApples = apples
+                .stream()
+                .filter(isHeavyAndGreen)
+                .collect(Collectors.toList());
+
+        /*
         heavyApples = apples
                 .stream()
                 .filter(Java8Main::isHeavy)
                 .filter(apple -> apple.getColor().equals("Green"))
                 .collect(Collectors.toList());
-
+        */
         System.out.println(heavyApples);
+
+        List<String> colors = apples.stream()
+                //.filter(isHeavyAndGreen)
+                .map(Apple::getColor)
+                        //.limit(2)                      //first 2 apples
+                .distinct()
+                .sorted()
+                .collect(Collectors.toList());
+        System.out.println(colors);
+    }
+
+    public static List<Apple> createApples(int count, Supplier<Apple> appleSupplier) {
+        List<Apple> apples = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            apples.add(appleSupplier.get());
+        }
+        return apples;
+    }
+
+    public static List<Apple> createApples(int count, BiFunction<String, Integer, Apple> appleSupplier) {
+        List<Apple> apples = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            apples.add(appleSupplier.apply("Red", 50));
+        }
+        return apples;
     }
 
     private static boolean isHeavy(Apple apple) {
@@ -93,6 +180,12 @@ public class Java8Main {
         integers.sort(Java8Main::sortIntsAsc);
 
         integers.sort((Integer o1, Integer o2) -> o1.compareTo(o2)); //integers.sort(( o1,  o2) -> o1.compareTo(o2));
+
+        integers.sort((Integer o1, Integer o2) -> {
+            //multi lines lambda example - { } and return
+            // some code;
+            return o1.compareTo(o2);
+        });
 
         System.out.println(integers);
     }
